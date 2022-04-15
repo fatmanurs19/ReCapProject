@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
 
 
@@ -6,8 +7,10 @@ using DataAccess.Concrete.InMemory;
 
 
 
-CarManager carManager = new CarManager(new InMemoryCarDal());
-foreach (var car in carManager.GetAll())
+CarManager carManager = new CarManager(new EfCarDal());
+foreach (var car in carManager.GetByColorId(1))
 {
-    Console.WriteLine(car.Description);
+    Console.WriteLine(car.CarName);
 }
+
+

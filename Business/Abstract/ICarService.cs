@@ -11,6 +11,7 @@ namespace Business.Abstract
     {
         //iş katmaında kullanacağımız servis operasyonları
         List<Car> GetAll();
-
+        List<Car> GetByBrandId(int id);
+        List<Car> GetByColorId(int id);
     }
 }

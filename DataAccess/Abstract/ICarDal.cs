@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.DataAccess;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +11,9 @@ namespace DataAccess.Abstract
 
     //iş yapan classları oluşturacağımız zaman ilk mutlaka interface oluşturmalıyız.
     //productla ilgili veri tabanında yapacağım operasyonların interface i
-    public interface ICarDal
+    public interface ICarDal:IEntityRepository<Car>
     {
-        List<Car> GetAll();
-        void Add(Car car);
-        void Update(Car car);
-        void Delete(Car car);
-        List<Car> GetById(int carId);
+       
 
     }
 }
