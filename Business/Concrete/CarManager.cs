@@ -36,8 +36,9 @@ namespace Business.Concrete
                 }
             }
         }
+        
 
-        public List<Car> GetAll()
+        public List<Car> GetAll() //listeleme
         {
            
             //bir iş sınıfı başka bir sınıfı newlemez
@@ -45,15 +46,28 @@ namespace Business.Concrete
             return _carDal.GetAll();
         }
 
-        public List<Car> GetByBrandId(int id)
+        public List<Car> GetByBrandId(int id) //brand idye göre
         {
             return _carDal.GetAll(c=>c.BrandId==id);
         }
 
         
-        public List<Car> GetByColorId(int id)
+        public List<Car> GetByColorId(int id) //color ıdye göre
         {
             return _carDal.GetAll(c => c.ColorId == id);
+        }
+        public void Delete(Car car) //silme
+        {
+            _carDal.Delete(car);
+        }
+        public void Update(Car car) //güncelleme
+        {
+            _carDal.Update(car);
+        }
+
+        public List<Car> GetById(int id) //idye göre
+        {
+            return _carDal.GetAll(c => c.CarId == id);
         }
     }
 }
