@@ -18,12 +18,12 @@ namespace Business.Concrete
             _colorDal = colorDal;
         }
 
-        public void Add(Color color)
+        public void Add(Color color) //renk ekleme
         {
            _colorDal.Add(color);
         }
 
-        public void Delete(Color color)
+        public void Delete(Color color)//renk silme
         {
             _colorDal.Delete(color);
         }
@@ -38,7 +38,7 @@ namespace Business.Concrete
            return _colorDal.Get(c=>c.ColorId==colorId);
         }
 
-        public void Update(Color color)
+        public void Update(Color color) //renkleri güncelleme
         {
            _colorDal.Update(color);
         }
